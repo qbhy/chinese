@@ -86,3 +86,17 @@ func IfString(condition bool, str string, others ...string) string {
 
 	return ""
 }
+
+func StrOr(str string, others ...string) string {
+	if str != "" {
+		return str
+	}
+
+	for _, str = range others {
+		if str != "" {
+			return str
+		}
+	}
+
+	return ""
+}

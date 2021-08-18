@@ -1,6 +1,7 @@
 package chinese
 
 import (
+	"os"
 	"strings"
 )
 
@@ -24,7 +25,7 @@ func RelatedWords(word string) map[string][]string {
 			lineNumbers = append(lineNumbers, index/3+1)
 		}
 	}
-	for _, rawWords := range ReadLines("../common_words.txt", lineNumbers) {
+	for _, rawWords := range ReadLines(StrOr(os.Getenv("CHINESE_WORDS_PATH"), "../common_words.txt"), lineNumbers) {
 		words := strings.Split(rawWords, ",")
 		results[words[0]] = strings.Split(words[1], "|")
 	}
