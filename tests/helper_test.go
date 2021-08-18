@@ -1,13 +1,24 @@
 package tests
 
 import (
-	"chinese"
 	"fmt"
+	"github.com/qbhy/chinese"
 	"github.com/qbhy/parallel"
 	"io/ioutil"
 	"strings"
 	"testing"
 )
+
+// 用于生成行数和字的对应关系
+func TestGenerateWord(t *testing.T) {
+	words := []string{}
+	chinese.ReadLineEach("../common_words.txt", func(lineNum int, word string) {
+		words = append(words, strings.Split(word, ",")[0])
+	})
+
+	fmt.Println(words)
+	fmt.Println(strings.Join(words, ""))
+}
 
 func TestFixCommonWords(t *testing.T) {
 	p := parallel.NewParallel(50)

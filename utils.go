@@ -15,7 +15,8 @@ func IsContain(items []int, item int) bool {
 	return false
 }
 
-func ReadLine(filepath string, linesNumber []int) (results []string) {
+// 读取指定行的文本
+func ReadLines(filepath string, linesNumber []int) (results []string) {
 	file, _ := os.Open(filepath)
 	defer file.Close()
 	fileScanner := bufio.NewScanner(file)

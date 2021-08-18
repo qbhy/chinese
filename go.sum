@@ -1,2 +1,4 @@
 github.com/qbhy/parallel v0.0.0-20210817095746-dbb3135398e1 h1:tnKGG+uTKqr8vtTsIsn1954SO3ZlIiDsWsZT/UsOhK8=
 github.com/qbhy/parallel v0.0.0-20210817095746-dbb3135398e1/go.mod h1:gjKS0IACnz3SWXkeEOUvPPZZxpeQAOW47jT4cpWPvqU=
+github.com/qbhy/parallel v0.0.0-20210818022515-7fdc71747cd6 h1:jYcj24+M3LPng1rjfVwuc281zOKJ9k8W9ROacS3fYeg=
+github.com/qbhy/parallel v0.0.0-20210818022515-7fdc71747cd6/go.mod h1:gjKS0IACnz3SWXkeEOUvPPZZxpeQAOW47jT4cpWPvqU=
