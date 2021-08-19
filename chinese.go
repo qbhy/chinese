@@ -26,8 +26,9 @@ func RelatedWords(word string) map[string][]string {
 		}
 	}
 	for _, rawWords := range ReadLines(StrOr(os.Getenv("CHINESE_WORDS_PATH"), "../common_words.txt"), lineNumbers) {
-		words := strings.Split(rawWords, ",")
-		results[words[0]] = strings.Split(words[1], "|")
+		if words := strings.Split(rawWords, ","); len(words) > 1 {
+			results[words[0]] = strings.Split(words[1], "|")
+		}
 	}
 
 	return results
