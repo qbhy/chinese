@@ -7,5 +7,5 @@ import (
 )
 
 func TestFindWords(t *testing.T) {
-	fmt.Println(chinese.RelatedWords("我说呢"))
+	fmt.Println(chinese.RelatedWords("走吧"))
 }

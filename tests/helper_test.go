@@ -44,3 +44,26 @@ func TestFixCommonWords(t *testing.T) {
 	fmt.Println("err", err)
 
 }
+
+// 生成 data.go
+func TestGenDataDotGo(t *testing.T) {
+	var words string
+
+	chinese.ReadLineEach("../common_words.txt", func(lineNum int, text string) {
+		result := strings.Split(text, ",")
+		if len(result) > 1 {
+			words += fmt.Sprintf(`	"%s": {"%s"},%s`, result[0], strings.ReplaceAll(result[1], "|", `","`), "\n")
+		} else {
+			words += fmt.Sprintf(`	"%s": {},%s`, result[0], "\n")
+		}
+	})
+
+	err := ioutil.WriteFile("../data.go", []byte(fmt.Sprintf(`package chinese
+var data = map[string][]string{
+%s
+}
+`, words)), 0644)
+
+	fmt.Println("err：", err)
+
+}
