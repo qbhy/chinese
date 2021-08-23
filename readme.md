@@ -6,8 +6,6 @@ golang 常见汉字词库
 go get github.com/qbhy/chinese
 ```
 
-## 配置 - configuration
-
 ## 使用 - usage
 ```go
 package tests
